@@ -22,7 +22,8 @@ namespace Booster.Web.Controllers
         public IActionResult Index()
         {
             var helper = new Helper();
-            return View(new { message = helper.Hello("world") });
+            ViewBag.Message = helper.Hello("world");
+            return View();
         }
 
         public IActionResult Privacy()
