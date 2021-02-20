@@ -1,0 +1,38 @@
+version: "3.9"
+services: 
+  solution:
+    build:
+      context: ./
+      dockerfile: ./containers/solution/Dockerfile
+    scale: 0
+
+  traefik:
+    image: traefik:v2.4
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--providers.file.directory=/etc/traefik/config/dynamic"
+    ports:
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./containers/traefik:/etc/traefik"
+
+  web:
+    build: 
+      context: ./
+      dockerfile: ./containers/web/Dockerfile
+      args:
+        SOLUTION_IMAGE: booster-net_solution
+    environment: 
+      ASPNETCORE_ENVIRONMENT: development
+    depends_on: 
+      - solution
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.booster-net.entrypoints=websecure"
+      - "traefik.http.routers.booster-net.tls=true"
+      - "traefik.http.routers.booster-net.rule=Host(`web.booster-net.local`)"
