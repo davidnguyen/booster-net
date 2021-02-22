@@ -10,17 +10,8 @@
             "request": "attach",
             "platform": "netCore",
             "sourceFileMap": {
-                "/src": "${workspaceFolder}/src/bootster.web"
-            }
-        },
-        {
-            "name": "Launch debug web in docker",
-            "type": "docker",
-            "request": "attach",
-            "platform": "netCore",
-            "netCore": {
-                "appProject": "${workspaceFolder}/src/booster.web/Booster.Web.csproj",
-                "enableDebugging": true
+                "/app/booster.web": "${workspaceFolder}/src/booster.web",
+                "/app/booster.common": "${workspaceFolder}/src/booster.common"
             }
         }
     ]
