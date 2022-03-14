@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+    storefront:
+      container_name: storefront
+      build: 
+        context: ../../
+        dockerfile: microservices/${STOREFRONT}/${STOREFRONT}.Service/Dockerfile
+        args:
+          service: ${STOREFRONT}
+      image: storefront
+      ports:
+          - "8000:80"
