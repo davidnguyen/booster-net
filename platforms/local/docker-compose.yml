@@ -9,4 +9,14 @@ services:
           service: ${STOREFRONT}
       image: storefront
       ports:
-          - "8000:80"
+        - "8000:80"
+      depends_on:
+        - db
+    db:
+      container_name: db
+      image: mcr.microsoft.com/mssql/server
+      environment:
+        SA_PASSWORD: "Booster00!"
+        ACCEPT_EULA: "Y"
+      ports:
+        - "1433:1433"
