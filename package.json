@@ -9,6 +9,7 @@
     "solution: publish local packages": "tools/scripts/push-local-packages.sh",
     "docker: build": "docker compose -f platforms/local/docker-compose.yml build",
     "docker: up": "docker compose -f platforms/local/docker-compose.yml up -d",
+    "docker: up and watching": "docker compose -f platforms/local/docker-compose.yml up",
     "docker: down": "docker compose -f platforms/local/docker-compose.yml down",
     "misc: add all projects to sln": "tools/scripts/add-all-projects-sln.sh"
   }

@@ -12,11 +12,30 @@ services:
         - "8000:80"
       depends_on:
         - db
+    inventory:
+      container_name: inventory
+      build: 
+        context: ../../
+        dockerfile: microservices/${INVENTORY}/${INVENTORY}.Service/Dockerfile
+        args:
+          service: ${INVENTORY}
+      image: inventory
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ConnectionStrings__DefaultConnection=Server=db;Database=${INVENTORY}.Service.Db;User ID=sa;Password=${DBPASS};TrustServerCertificate=true;
+      ports:
+        - "8002:80"
+      depends_on:
+        - db
+      entrypoint: ["./wait-for-it.sh", "db:1433", "-t", "30", "--", "dotnet", "${INVENTORY}.Service.dll"]
     db:
       container_name: db
       image: mcr.microsoft.com/mssql/server
       environment:
-        SA_PASSWORD: "Booster00!"
-        ACCEPT_EULA: "Y"
+        - SA_PASSWORD=${DBPASS}
+        - ACCEPT_EULA=Y
+      # volumes:
+      #   - ./mount/db/data:/var/opt/mssql/data:z
+      #   - ./mount/db/logs:/var/opt/mssql/logs:z
       ports:
         - "1433:1433"
