@@ -21,6 +21,4 @@ ARG service
 ENV serviceDll="$service.Service.dll"
 WORKDIR /app
 COPY --from=build /app .
-COPY ./tools/scripts/wait-for-it.sh .
-RUN chmod +x wait-for-it.sh
 ENTRYPOINT dotnet $serviceDll

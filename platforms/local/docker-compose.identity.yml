@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+    identity:
+      container_name: identity
+      build: 
+        context: ../../
+        dockerfile: microservices/${IDENTITY}/${IDENTITY}.Service/Dockerfile
+        args:
+          service: ${IDENTITY}
+      image: identity
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=https://+:8000;http://+:8001
+        - ASPNETCORE_Kestrel__Certificates__Default__Password=DevCertPassword
+        - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+        - ConnectionStrings__DefaultConnection=Server=localhost;Database=${IDENTITY}.Service.Db;User ID=sa;Password=${DBPASS};TrustServerCertificate=true;
+      ports:
+        - "8000"
+        - "8001"
+      volumes:
+        - ../../.local/https:/https:ro
+      network_mode: "host"
+        

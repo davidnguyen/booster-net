@@ -12,6 +12,22 @@ services:
         - "8000:80"
       depends_on:
         - db
+    identity:
+      container_name: identity
+      build: 
+        context: ../../
+        dockerfile: microservices/${IDENTITY}/${IDENTITY}.Service/Dockerfile
+        args:
+          service: ${IDENTITY}
+      image: identity
+      environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ConnectionStrings__DefaultConnection=Server=db;Database=${IDENTITY}.Service.Db;User ID=sa;Password=${DBPASS};TrustServerCertificate=true;
+      ports:
+        - "8001:80"
+      depends_on:
+        - db
+      entrypoint: ["./wait-for-it.sh", "db:1433", "-t", "30", "--", "dotnet", "${IDENTITY}.Service.dll"]
     inventory:
       container_name: inventory
       build: 

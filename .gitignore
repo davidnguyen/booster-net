@@ -5,6 +5,7 @@
 
 containers/traefik/certs/
 packages/
+.local/
 
 # User-specific files
 *.rsuser
