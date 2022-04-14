@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "0-solution: build": "dotnet build",
-    "0-solution: clean": "dotnet clean",
-    "0-solution: test": "dotnet test",
-    "0-solution: publish local packages": "tools/scripts/push-local-packages.sh",
-    "1-db: build": "docker compose -f platforms/local/docker-compose.db.yml build",
-    "1-db: up": "docker compose -f platforms/local/docker-compose.db.yml up -d",
-    "1-db: down": "docker compose -f platforms/local/docker-compose.db.yml down -t 1",
-    "2-identity: build": "docker compose -f platforms/local/docker-compose.identity.yml build",
-    "2-identity: up": "docker compose -f platforms/local/docker-compose.identity.yml up -d",
-    "2-identity: down": "docker compose -f platforms/local/docker-compose.identity.yml down -t 1",
+    "solution: build": "dotnet build",
+    "solution: clean": "dotnet clean",
+    "solution: test": "dotnet test",
+    "solution: publish local packages": "tools/scripts/push-local-packages.sh",
+    "db: build": "docker compose -f platforms/local/docker-compose.db.yml build",
+    "db: up": "docker compose -f platforms/local/docker-compose.db.yml up -d",
+    "db: down": "docker compose -f platforms/local/docker-compose.db.yml down -t 1",
     "misc: add all projects to sln": "tools/scripts/add-all-projects-sln.sh"
   }
 }

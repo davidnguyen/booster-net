@@ -1,0 +1,10 @@
+{
+  "name": "booster.storefront",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "storefront: build": "docker compose -f ../../platforms/local/docker-compose.storefront.yml build",
+    "storefront: up": "docker compose -f ../../platforms/local/docker-compose.storefront.yml up -d",
+    "storefront: down": "docker compose -f ../../platforms/local/docker-compose.storefront.yml down -t 1"
+  }
+}

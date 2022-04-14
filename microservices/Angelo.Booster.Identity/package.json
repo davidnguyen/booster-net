@@ -1,0 +1,10 @@
+{
+  "name": "booster.identity",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "identity: build": "docker compose -f ../../platforms/local/docker-compose.identity.yml build",
+    "identity: up": "docker compose -f  ../../platforms/local/docker-compose.identity.yml up -d",
+    "identity: down": "docker compose -f  ../../platforms/local/docker-compose.identity.yml down -t 1"
+  }
+}
