@@ -1,5 +1,11 @@
 # Getting Started
 
+## Prerequisites
+* Dotnet 6
+* `dotnet tool install --global dotnet-ef`
+* Docker
+* mkcert
+
 ## Initial setup
 * Set up development certificate
 

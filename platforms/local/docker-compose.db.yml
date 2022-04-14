@@ -6,9 +6,6 @@ services:
       environment:
         - SA_PASSWORD=${DBPASS}
         - ACCEPT_EULA=Y
-      # volumes:
-      #   - ./mount/db/data:/var/opt/mssql/data:z
-      #   - ./mount/db/logs:/var/opt/mssql/logs:z
       ports:
         - "1433"
       network_mode: "host"

@@ -30,6 +30,8 @@ public class Index : PageModel
         
     [BindProperty]
     public InputModel Input { get; set; }
+
+    public IEnumerable<TestUser> TestUsers {get;set;}
         
     public Index(
         IIdentityServerInteractionService interaction,
