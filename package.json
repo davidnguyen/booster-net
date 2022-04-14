@@ -9,13 +9,10 @@
     "0-solution: publish local packages": "tools/scripts/push-local-packages.sh",
     "1-db: build": "docker compose -f platforms/local/docker-compose.db.yml build",
     "1-db: up": "docker compose -f platforms/local/docker-compose.db.yml up -d",
-    "1-db: down": "docker compose -f platforms/local/docker-compose.db.yml down",
+    "1-db: down": "docker compose -f platforms/local/docker-compose.db.yml down -t 1",
     "2-identity: build": "docker compose -f platforms/local/docker-compose.identity.yml build",
     "2-identity: up": "docker compose -f platforms/local/docker-compose.identity.yml up -d",
-    "2-identity: down": "docker compose -f platforms/local/docker-compose.identity.yml down",
-    "3-inventory: build": "docker compose -f platforms/local/docker-compose.inventory.yml build",
-    "3-inventory: up": "docker compose -f platforms/local/docker-compose.inventory.yml up -d",
-    "3-inventory: down": "docker compose -f platforms/local/docker-compose.inventory.yml down",
+    "2-identity: down": "docker compose -f platforms/local/docker-compose.identity.yml down -t 1",
     "misc: add all projects to sln": "tools/scripts/add-all-projects-sln.sh"
   }
 }

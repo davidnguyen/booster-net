@@ -24,11 +24,12 @@ services.AddSwaggerGen();
 
 services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options => {
-        options.Authority = "http://localhost:8001";
+        options.Authority = builder.Configuration["App:IdentityServer"];
         options.TokenValidationParameters.ValidateAudience = false;
         options.TokenValidationParameters.ValidateIssuer = false;
         options.RequireHttpsMetadata = false;
     });
+
 services.AddAuthorization(options => 
     options.AddPolicy("ApiScope", policy => {
         policy.RequireAuthenticatedUser();
@@ -46,7 +47,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
     SeedData.EnsureSeedData(app);
-    System.Net.ServicePointManager.ServerCertificateValidationCallback = (message, cert, chain, errors) => true;
 }
 
 app.UseHttpsRedirection();

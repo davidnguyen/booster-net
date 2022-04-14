@@ -1,0 +1,10 @@
+{
+  "name": "booster",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "inventory: build": "docker compose -f ../../platforms/local/docker-compose.inventory.yml build",
+    "inventory: up": "docker compose -f ../../platforms/local/docker-compose.inventory.yml up -d",
+    "inventory: down": "docker compose -f ../../platforms/local/docker-compose.inventory.yml down -t 1"
+  }
+}
