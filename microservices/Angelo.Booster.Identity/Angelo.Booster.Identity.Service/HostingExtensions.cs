@@ -6,6 +6,8 @@ using Angelo.Booster.Identity.Service.Pages.Admin.IdentityScopes;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Angelo.Booster.Identity.Service.Common.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace Angelo.Booster.Identity.Service;
 
@@ -16,6 +18,12 @@ internal static class HostingExtensions
         builder.Services.AddRazorPages();
 
         var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+        builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
 
         builder.Services
             .AddIdentityServer(options =>
@@ -28,7 +36,7 @@ internal static class HostingExtensions
                 // see https://docs.duendesoftware.com/identityserver/v5/fundamentals/resources/
                 options.EmitStaticAudienceClaim = true;
             })
-            .AddTestUsers(TestUsers.Users)
+            .AddAspNetIdentity<ApplicationUser>()
             // this adds the config data from DB (clients, resources, CORS)
             .AddConfigurationStore(options =>
             {
@@ -51,10 +59,10 @@ internal static class HostingExtensions
 
         // this adds the necessary config for the simple admin/config pages
         {
-            builder.Services.AddAuthorization(options =>
-                options.AddPolicy("admin",
-                    policy => policy.RequireClaim("sub", "1"))
-            );
+            // builder.Services.AddAuthorization(options =>
+            //     options.AddPolicy("admin",
+            //         policy => policy.RequireClaim("sub", "1"))
+            // );
 
             builder.Services.Configure<RazorPagesOptions>(options =>
                 options.Conventions.AuthorizeFolder("/Admin", "admin"));
