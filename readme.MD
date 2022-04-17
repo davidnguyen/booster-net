@@ -1,15 +1,17 @@
 # Getting Started
 
 ## Prerequisites
+* Git
+* Vscode
 * Dotnet 6
-* `dotnet tool install --global dotnet-ef`
 * Docker
-* mkcert
+* Nvm / Node
 
 ## Initial setup
 * Set up development certificate
 
     ```
+    dotnet tool install --global dotnet-ef
     dotnet dev-certs https -ep ./.local/https/aspnetapp.pfx -p DevCertPassword
     dotnet dev-certs https --trust
     ```

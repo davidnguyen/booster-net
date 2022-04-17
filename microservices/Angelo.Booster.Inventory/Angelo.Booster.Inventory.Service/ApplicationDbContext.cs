@@ -4,7 +4,7 @@ using Angelo.Booster.Inventory.Service.Common.Builders;
 
 namespace Angelo.Booster.Inventory.Service;
 
-public class ApplicationDbContext: DbContext
+public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions options)
             : base(options)

@@ -10,7 +10,7 @@ public class SeedData
         using (var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
         {
             using var dbContext = scope.ServiceProvider.GetService<ApplicationDbContext>();
-            dbContext.Database.Migrate();
+            dbContext!.Database.Migrate();
             EnsureSeedData(dbContext);
         }
     }
