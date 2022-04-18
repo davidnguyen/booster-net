@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "solution: build": "dotnet build",
+    "solution: build": "mkdir -p packages && dotnet build",
     "solution: clean": "dotnet clean",
     "solution: test": "dotnet test",
     "solution: publish local packages": "tools/scripts/push-local-packages.sh",
