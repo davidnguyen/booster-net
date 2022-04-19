@@ -1,6 +1,6 @@
 using Angelo.Booster.Inventory.Service;
+using Angelo.Booster.Inventory.Service.Queries;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -20,7 +20,6 @@ var services = builder.Services;
 
 services.AddControllers();
 services.AddEndpointsApiExplorer();
-services.AddSwaggerGen();
 
 services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options => {
@@ -40,12 +39,14 @@ services.AddAuthorization(options =>
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
+services.AddGraphQLServer()
+    .RegisterDbContext<ApplicationDbContext>(DbContextKind.Resolver)
+    .AddQueryType<ProductQuery>();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
     SeedData.EnsureSeedData(app);
 }
 
@@ -53,5 +54,6 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapGraphQL();
 
 app.Run();
