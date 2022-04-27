@@ -11,12 +11,21 @@ public class ApplicationDbContext : DbContext
     {
     }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.EnableSensitiveDataLogging(true);
+        base.OnConfiguring(optionsBuilder);
+    }
+
     public DbSet<Product> Products => Set<Product>();
+
+    public DbSet<Category> Categories => Set<Category>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
         new ProductBuilder(this).Configure(modelBuilder.Entity<Product>());
+        new CategoryBuilder(this).Configure(modelBuilder.Entity<Category>());
     }
 }

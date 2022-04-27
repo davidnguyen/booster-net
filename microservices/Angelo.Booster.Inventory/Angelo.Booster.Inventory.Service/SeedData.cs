@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Angelo.Booster.Libraries.Common.DataSeeding;
+using Angelo.Booster.Inventory.Service.Common.Entities;
 
 namespace Angelo.Booster.Inventory.Service;
 
@@ -17,22 +19,13 @@ public class SeedData
 
     private static void EnsureSeedData(ApplicationDbContext dbContext)
     {
-        if (!dbContext.Products.Any())
-        {
-            Log.Debug("Products being populated");
-            dbContext.Products.Add(new Common.Entities.Product(){
-                Id = new Guid("00000000-0000-0000-0001-000000000000"),
-                Name = "Tomato Truss 1KG Box"
-            });
-            dbContext.Products.Add(new Common.Entities.Product(){
-                Id = new Guid("00000000-0000-0000-0001-000000000001"),
-                Name = "Baby Spinach 300gr Package"
-            });
-            dbContext.SaveChanges();
-        }
-        else
-        {
-            Log.Debug("Products already populated");
-        }
+        dbContext.LoadSeedData<Product>();
+        dbContext.LoadSeedData<Category>(customEntityMapper: (record) => new Category {
+            Id = new Guid(record.Id),
+            Name = record.Name,
+            ParentId = !string.IsNullOrEmpty(record.ParentId) 
+                ? new Guid(record.ParentId) : null,
+            UrlSlug = record.UrlSlug
+        });
     }
 }

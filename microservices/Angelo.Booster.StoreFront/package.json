@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "storefront: build": "docker compose -f ../../platforms/local/docker-compose.storefront.yml build",
+    "storefront: build": "docker compose -f ../../platforms/local/docker-compose.storefront.yml build --no-cache",
     "storefront: up": "docker compose -f ../../platforms/local/docker-compose.storefront.yml up -d",
     "storefront: down": "docker compose -f ../../platforms/local/docker-compose.storefront.yml down -t 1"
   }

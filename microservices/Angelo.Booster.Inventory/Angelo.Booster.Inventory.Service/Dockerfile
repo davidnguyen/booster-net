@@ -1,15 +1,16 @@
 # syntax=docker/dockerfile:1
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /source
 ARG service
 ENV serviceProject="$service.Service"
+WORKDIR /source/$service/$serviceProject
 
 # Copy csproj and restore as distinct layers
 COPY microservices/$service/$serviceProject/$serviceProject.csproj .
 COPY nuget.config .
 COPY ./packages ./packages
-RUN dotnet restore
+COPY ./tools/templates /tools/templates
+RUN dotnet restore --disable-parallel
 
 # Copy everything else and build
 COPY microservices/$service/$serviceProject .

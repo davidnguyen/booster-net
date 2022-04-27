@@ -4,20 +4,28 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Angelo.Booster.Inventory.Service.Common.Builders;
 
-public class ProductBuilder : IEntityTypeConfiguration<Product>
+public class CategoryBuilder : IEntityTypeConfiguration<Category>
 {
     private readonly ApplicationDbContext _dbContext;
 
-    public ProductBuilder(ApplicationDbContext dbContext)
+    public CategoryBuilder(ApplicationDbContext dbContext)
     {
         _dbContext = dbContext;
     }
 
-    public void Configure(EntityTypeBuilder<Product> builder)
+    public void Configure(EntityTypeBuilder<Category> builder)
     {
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name)
             .IsRequired();
+
+        builder.Property(x => x.UrlSlug)
+            .IsRequired();
+
+        builder.HasOne(x => x.Parent)
+            .WithMany(x => x.Children)
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

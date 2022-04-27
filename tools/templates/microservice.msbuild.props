@@ -1,0 +1,22 @@
+<Project>
+    <PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>Enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+		<Company>Angelo</Company>
+	</PropertyGroup>
+	<PropertyGroup>
+		<ServerGarbageCollection>false</ServerGarbageCollection>
+	</PropertyGroup>
+    <ItemGroup>
+		<None Remove="Seeds\**\*.*"/>
+		<Content Include="Seeds\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<None Update="Seeds\**\*.*">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+</Project>
