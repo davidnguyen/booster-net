@@ -1,6 +1,4 @@
-using Angelo.Booster.Inventory.Service.Common.Entities;
-
-namespace Angelo.Booster.Inventory.Service.Queries;
+namespace Angelo.Booster.Inventory.Service.Products;
 
 public class ProductQuery
 {

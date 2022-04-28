@@ -1,5 +1,5 @@
 using Angelo.Booster.Inventory.Service;
-using Angelo.Booster.Inventory.Service.Queries;
+using Angelo.Booster.Inventory.Service.Products;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 

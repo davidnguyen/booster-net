@@ -1,8 +1,7 @@
-using Angelo.Booster.Inventory.Service.Common.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Angelo.Booster.Inventory.Service.Common.Builders;
+namespace Angelo.Booster.Inventory.Service.Categories;
 
 public class CategoryBuilder : IEntityTypeConfiguration<Category>
 {

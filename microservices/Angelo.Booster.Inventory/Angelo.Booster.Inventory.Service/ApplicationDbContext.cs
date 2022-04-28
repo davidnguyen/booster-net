@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Angelo.Booster.Inventory.Service.Common.Entities;
-using Angelo.Booster.Inventory.Service.Common.Builders;
+using Angelo.Booster.Inventory.Service.Products;
+using Angelo.Booster.Inventory.Service.Categories;
 
 namespace Angelo.Booster.Inventory.Service;
 
