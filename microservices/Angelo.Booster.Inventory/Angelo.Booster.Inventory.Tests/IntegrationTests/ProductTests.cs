@@ -33,8 +33,3 @@ public class ProductTests
         var response = await client.SendQueryAsync<GraphQLResponse<Product[]>>(request);
     }
 }
-
-public class GraphQLResponse<T>
-{
-    public T? Data { get; set; }
-}
