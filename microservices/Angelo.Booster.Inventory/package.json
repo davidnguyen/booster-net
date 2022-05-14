@@ -5,6 +5,7 @@
   "scripts": {
     "inventory: build": "docker compose -f ../../platforms/local/docker-compose.inventory.yml build --no-cache",
     "inventory: up": "docker compose -f ../../platforms/local/docker-compose.inventory.yml up -d",
-    "inventory: down": "docker compose -f ../../platforms/local/docker-compose.inventory.yml down -t 1"
+    "inventory: down": "docker compose -f ../../platforms/local/docker-compose.inventory.yml down -t 1",
+    "inventory: run integration tests": "dotnet test Angelo.Booster.Inventory.Tests/Angelo.Booster.Inventory.Tests.csproj --filter FullyQualifiedName~IntegrationTests -s Angelo.Booster.Inventory.Tests/.runsettings"
   }
 }

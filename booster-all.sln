@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservices", "{1BCD9181-D4E1-42F2-AAD7-67A701586319}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "microservices", "microservices", "{3519A026-7030-400B-874F-EEBFA73548E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angelo.Booster.Identity", "Angelo.Booster.Identity", "{1DD9FAF7-5509-458D-B842-182FC19070B9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angelo.Booster.Identity", "Angelo.Booster.Identity", "{48038814-E26A-4967-968F-D4191CB35997}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Identity.Service", "microservices\Angelo.Booster.Identity\Angelo.Booster.Identity.Service\Angelo.Booster.Identity.Service.csproj", "{8646A8C4-152E-41BB-A91A-AECC9B89BB42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Identity.Service", "microservices\Angelo.Booster.Identity\Angelo.Booster.Identity.Service\Angelo.Booster.Identity.Service.csproj", "{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angelo.Booster.Inventory", "Angelo.Booster.Inventory", "{17D99B7D-6BFC-47C9-AFBB-0582E8C595E1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angelo.Booster.Inventory", "Angelo.Booster.Inventory", "{2B3AF5FA-A9D7-4063-980E-23B9CEA1A804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Inventory.Service", "microservices\Angelo.Booster.Inventory\Angelo.Booster.Inventory.Service\Angelo.Booster.Inventory.Service.csproj", "{1907A8E3-D87C-4815-960B-77867DA4E324}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Inventory.Service", "microservices\Angelo.Booster.Inventory\Angelo.Booster.Inventory.Service\Angelo.Booster.Inventory.Service.csproj", "{D1731907-6A65-4C83-8793-924612578E9B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{B3660DC1-C9E9-437D-AC52-F1805D7BA6FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Inventory.Tests", "microservices\Angelo.Booster.Inventory\Angelo.Booster.Inventory.Tests\Angelo.Booster.Inventory.Tests.csproj", "{EF8F2607-5DB0-4C84-829C-8271FCA19611}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Libraries.MicroService", "libraries\Angelo.Booster.Libraries.MicroService\Angelo.Booster.Libraries.MicroService.csproj", "{0683F8F5-36D5-43AE-925F-7CCC7939EEEA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{D14C0EB8-6D20-421D-8CFB-4731F497A317}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Libraries.Common", "libraries\Angelo.Booster.Libraries.Common\Angelo.Booster.Libraries.Common.csproj", "{A12DC460-AD5C-4AB2-86E3-CE1073D631B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Libraries.MicroService", "libraries\Angelo.Booster.Libraries.MicroService\Angelo.Booster.Libraries.MicroService.csproj", "{08848DB2-5CA8-4218-995D-FBD297FDB0A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Angelo.Booster.Libraries.Common", "libraries\Angelo.Booster.Libraries.Common\Angelo.Booster.Libraries.Common.csproj", "{4281EB92-7116-4C1C-8920-63552FFD1476}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,29 +30,34 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8646A8C4-152E-41BB-A91A-AECC9B89BB42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8646A8C4-152E-41BB-A91A-AECC9B89BB42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8646A8C4-152E-41BB-A91A-AECC9B89BB42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8646A8C4-152E-41BB-A91A-AECC9B89BB42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1907A8E3-D87C-4815-960B-77867DA4E324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1907A8E3-D87C-4815-960B-77867DA4E324}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1907A8E3-D87C-4815-960B-77867DA4E324}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1907A8E3-D87C-4815-960B-77867DA4E324}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0683F8F5-36D5-43AE-925F-7CCC7939EEEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0683F8F5-36D5-43AE-925F-7CCC7939EEEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0683F8F5-36D5-43AE-925F-7CCC7939EEEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0683F8F5-36D5-43AE-925F-7CCC7939EEEA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A12DC460-AD5C-4AB2-86E3-CE1073D631B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A12DC460-AD5C-4AB2-86E3-CE1073D631B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A12DC460-AD5C-4AB2-86E3-CE1073D631B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A12DC460-AD5C-4AB2-86E3-CE1073D631B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1731907-6A65-4C83-8793-924612578E9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1731907-6A65-4C83-8793-924612578E9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1731907-6A65-4C83-8793-924612578E9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1731907-6A65-4C83-8793-924612578E9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF8F2607-5DB0-4C84-829C-8271FCA19611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF8F2607-5DB0-4C84-829C-8271FCA19611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF8F2607-5DB0-4C84-829C-8271FCA19611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF8F2607-5DB0-4C84-829C-8271FCA19611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08848DB2-5CA8-4218-995D-FBD297FDB0A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08848DB2-5CA8-4218-995D-FBD297FDB0A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08848DB2-5CA8-4218-995D-FBD297FDB0A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08848DB2-5CA8-4218-995D-FBD297FDB0A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4281EB92-7116-4C1C-8920-63552FFD1476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4281EB92-7116-4C1C-8920-63552FFD1476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4281EB92-7116-4C1C-8920-63552FFD1476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4281EB92-7116-4C1C-8920-63552FFD1476}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1DD9FAF7-5509-458D-B842-182FC19070B9} = {1BCD9181-D4E1-42F2-AAD7-67A701586319}
-		{8646A8C4-152E-41BB-A91A-AECC9B89BB42} = {1DD9FAF7-5509-458D-B842-182FC19070B9}
-		{17D99B7D-6BFC-47C9-AFBB-0582E8C595E1} = {1BCD9181-D4E1-42F2-AAD7-67A701586319}
-		{1907A8E3-D87C-4815-960B-77867DA4E324} = {17D99B7D-6BFC-47C9-AFBB-0582E8C595E1}
-		{0683F8F5-36D5-43AE-925F-7CCC7939EEEA} = {B3660DC1-C9E9-437D-AC52-F1805D7BA6FF}
-		{A12DC460-AD5C-4AB2-86E3-CE1073D631B5} = {B3660DC1-C9E9-437D-AC52-F1805D7BA6FF}
+		{48038814-E26A-4967-968F-D4191CB35997} = {3519A026-7030-400B-874F-EEBFA73548E3}
+		{2C49BDE0-1BAE-44AE-ABD0-D17EDC654916} = {48038814-E26A-4967-968F-D4191CB35997}
+		{2B3AF5FA-A9D7-4063-980E-23B9CEA1A804} = {3519A026-7030-400B-874F-EEBFA73548E3}
+		{D1731907-6A65-4C83-8793-924612578E9B} = {2B3AF5FA-A9D7-4063-980E-23B9CEA1A804}
+		{EF8F2607-5DB0-4C84-829C-8271FCA19611} = {2B3AF5FA-A9D7-4063-980E-23B9CEA1A804}
+		{08848DB2-5CA8-4218-995D-FBD297FDB0A4} = {D14C0EB8-6D20-421D-8CFB-4731F497A317}
+		{4281EB92-7116-4C1C-8920-63552FFD1476} = {D14C0EB8-6D20-421D-8CFB-4731F497A317}
 	EndGlobalSection
 EndGlobal

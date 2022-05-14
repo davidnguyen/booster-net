@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+  <RunConfiguration>
+    <EnvironmentVariables>
+      <SERVICE_URL>http://localhost:8003/graphql/</SERVICE_URL>
+    </EnvironmentVariables>
+  </RunConfiguration>
+</RunSettings>
